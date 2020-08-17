@@ -1,0 +1,14 @@
+Package: MisTemas
+Type: Package
+Title: Paquete para mis temas personalizados html.
+Version: 0.1.0
+Author: Isaac Z. Arias
+Maintainer: Isaac Z. Arias <isaac.actuario@gmail.com>
+Description: El paquete contiene temas para uso cotidiano.
+    Puede se para consultorias personales, trabajos en instituciones o presentaciones universitrias. 
+    Actualmente solo contiene el tema para los entregables de la Universidad de Costa Rica.
+License: no hay
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/DesAct12/MisTemas
+BugReports: https://github.com/DesAct12/MisTemas/issues
