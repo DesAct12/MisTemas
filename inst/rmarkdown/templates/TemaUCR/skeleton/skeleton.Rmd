@@ -1,0 +1,80 @@
+---
+title: "Mi Tema para Entregables de la UCR"
+author: "Isaac Z. Arias"
+date: "16/8/2020"
+output:
+  html_document:
+    template: "Tema_UCR_estructura.html"
+    css: "Tema_UCR_estilo.css"
+    toc: true
+---
+
+```{js, echo=FALSE}
+$( document ).ready(function() {
+
+    // Fix for dots in level 1 and level 2 titles
+    $('body .section.level1').each(function () {
+      $(this).attr("id", $(this).attr("id").replace(/\./g, "-"));
+    });
+    $('body .section.level2').each(function () {
+      $(this).attr("id", $(this).attr("id").replace(/\./g, "-"));
+    });
+    $('#table-of-contents ul li a').each(function () {
+      $(this).attr("href", $(this).attr("href").replace(/\./g, "-"));
+    });
+
+    // Shift nav in mobile when clicking the menu.
+    $(document).on('click', "[data-toggle='wy-nav-top']", function() {
+      $("[data-toggle='wy-nav-shift']").toggleClass("shift");
+    });
+    // Close menu when you click a link.
+    $(document).on('click', "#table-of-contents ul li a", function() {
+      $("[data-toggle='wy-nav-shift']").removeClass("shift");
+    });
+    // Close menu when you click on main content
+    $(document).on('click', "#main, #header", function() {
+      $("[data-toggle='wy-nav-shift']").removeClass("shift");
+    });
+
+    // Make tables responsive
+    $("#main table").wrap("<div class='table-wrapper'></div>");
+
+    // ScrollSpy also requires that we use a Bootstrap nav component.
+    $('#table-of-contents ul').first().addClass('nav');
+    $('body').scrollspy({target: '#table-of-contents'});
+
+    // add sticky table headers
+    //$('table').stickyTableHeaders();
+
+});
+
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+## Prueba
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+# Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+## Note
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
